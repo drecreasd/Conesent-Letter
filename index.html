@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Informed Consent | सूचित सहमति पत्र</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- LEFT: inputs. Each input has data-target = the id of the paper element it fills. -->
+    <aside class="panel">
+      <h1>Fill the form<br><span class="ne">फारम भर्नुहोस्</span></h1>
+
+      <label>Language / भाषा
+        <select id="lang-select">
+          <option value="both">नेपाली + English</option>
+          <option value="ne">नेपाली</option>
+          <option value="en">English</option>
+        </select>
+      </label>
+
+      <label>Patient name / बिरामीको नाम
+        <input type="text" data-target="p-name">
+      </label>
+      <label>Age / उमेर , Sex / लिङ्ग
+        <input type="text" data-target="p-age">
+      </label>
+      <label>Guardian's or spouse's name / अभिभावक वा पति/पत्नीको नाम
+        <input type="text" data-target="p-father">
+      </label>
+      <label>Complete address / पूरा ठेगाना
+        <input type="text" data-target="p-address">
+      </label>
+      <label>Telephone no. / सम्पर्क फोन नम्बर
+        <input type="text" data-target="p-phone">
+      </label>
+      <label>Procedure / शल्यक्रियाको नाम
+        <input type="text" data-target="p-procedure">
+      </label>
+      <label>Surgeon / शल्यचिकित्सक
+        <input type="text" data-target="p-surgeon">
+      </label>
+      <label>Physician / MO on board / फिजिसियन / मेडिकल अफिसर
+        <input type="text" data-target="p-physician">
+      </label>
+      <label>Referring hospital / clinic / रेफर गर्ने अस्पताल / क्लिनिक
+        <input type="text" data-target="p-referrer">
+      </label>
+      <label>Date / मिति
+        <input type="date" data-target="p-date">
+      </label>
+
+      <button type="button" id="print-btn">Print / प्रिन्ट गर्नुहोस्</button>
+    </aside>
+
+    <!-- RIGHT: the paper. This is what gets printed. -->
+    <!-- data-i18n = the key looked up in the translations list in script.js -->
+    <main class="paper" id="paper">
+      <header>
+        <p class="clinic">Tansen Medical Center</p>
+        <h2 data-i18n="title" data-sep="line"></h2>
+      </header>
+
+      <dl>
+        <div><dt data-i18n="patientName"></dt><dd id="p-name"></dd></div>
+        <div><dt data-i18n="ageSex"></dt><dd id="p-age"></dd></div>
+        <div><dt data-i18n="father"></dt><dd id="p-father"></dd></div>
+        <div><dt data-i18n="address"></dt><dd id="p-address"></dd></div>
+        <div><dt data-i18n="phone"></dt><dd id="p-phone"></dd></div>
+        <div><dt data-i18n="procedure"></dt><dd id="p-procedure"></dd></div>
+        <div><dt data-i18n="surgeon"></dt><dd id="p-surgeon"></dd></div>
+        <div><dt data-i18n="physician"></dt><dd id="p-physician"></dd></div>
+        <div><dt data-i18n="referrer"></dt><dd id="p-referrer"></dd></div>
+        <div><dt data-i18n="date"></dt><dd id="p-date"></dd></div>
+      </dl>
+
+      <!-- SAMPLE WORDING ONLY. A doctor must approve the final text before real use. -->
+      <ol class="clauses">
+        <li data-i18n="c1" data-sep="para"></li>
+        <li data-i18n="c2" data-sep="para"></li>
+        <li data-i18n="c3" data-sep="para"></li>
+        <li data-i18n="c4" data-sep="para"></li>
+        <li data-i18n="c5" data-sep="para"></li>
+      </ol>
+
+      <div class="sign">
+        <span data-i18n="signature" data-sep="line"></span>
+        <span data-i18n="witness" data-sep="line"></span>
+        <span data-i18n="doctorSign" data-sep="line"></span>
+      </div>
+    </main>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
